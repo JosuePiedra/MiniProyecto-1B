@@ -5,7 +5,7 @@ def simpson13 (f:Double => Double, lInferior : Int, lSuperior : Int, nIntervalos
   val sumatoria = (1 to nIntervalos / 2).map(f1(_)).sum
   (sumatoria * h) / 3
 }
-xs
+
 def simpson13Extendido (f:Double => Double, lInferior : Int, lSuperior : Int) : Double = {
   val n = 2 * (lSuperior - lInferior)
   val h = (lSuperior - lInferior) / n.toDouble
@@ -23,20 +23,20 @@ simpson13Extendido(f1, 3, 5)
 
 
 def f2(x:Double) = 3 * math.pow(x,2)
-simpson13(f2, 3, 5, 2)
-simpson13Extendido(f2, 3, 5)
+simpson13(f2, 0, 2, 2)
+simpson13Extendido(f2, 0, 2)
 
 def f3(x:Double) = x + (2 * math.pow(x,2)) -  math.pow(x,3) + (5 * math.pow(x,4))
-simpson13(f3, -1, 1, 6)
+simpson13(f3, -1, 1, 2)
 simpson13Extendido(f3, -1, 1)
 
 
 def f4(x:Double) = ((2*x)+1) / (math.pow(x,2) + x)
-simpson13(f4, 1, 2, 6)
+simpson13(f4, 1, 2, 2)
 simpson13Extendido(f4, 1, 2)
 
 def f5(x:Double) = Math.exp(x)
-simpson13(f5, 0, 1, 6)
+simpson13(f5, 0, 1, 2)
 simpson13Extendido(f5, 0, 1)
 
 def f6(x:Double) = 1 / math.sqrt(1 + math.pow(x,6))
@@ -44,7 +44,7 @@ simpson13(f6, 2, 3, 2)
 simpson13Extendido(f6, 2, 3)
 
 def f7(x:Double) = 1 / 1 + math.pow(x,2)
-simpson13(f7, 0, 1, 6)
+simpson13(f7, 0, 1, 2)
 simpson13Extendido(f2, 0, 1)
 
 
